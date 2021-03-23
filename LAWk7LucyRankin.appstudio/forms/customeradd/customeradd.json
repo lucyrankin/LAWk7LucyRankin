@@ -16,7 +16,7 @@
         "forms",
         "customeradd",
         "Elements",
-        "txtaAddCustomer.json"
+        "btnCustomerAdd.json"
       ]
     },
     {
@@ -25,7 +25,7 @@
         "forms",
         "customeradd",
         "Elements",
-        "btnAdd.json"
+        "lblAddConfirmation.json"
       ]
     },
     {
@@ -34,7 +34,34 @@
         "forms",
         "customeradd",
         "Elements",
-        "lblAdd.json"
+        "inptNewAddress.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "customeradd",
+        "Elements",
+        "inptNewCity.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "customeradd",
+        "Elements",
+        "inputNewName.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "customeradd",
+        "Elements",
+        "inptNewState.json"
       ]
     }
   ],
