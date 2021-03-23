@@ -25,7 +25,16 @@
         "forms",
         "customeradd",
         "Elements",
-        "btnadd.json"
+        "btnAdd.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "customeradd",
+        "Elements",
+        "lblAdd.json"
       ]
     }
   ],

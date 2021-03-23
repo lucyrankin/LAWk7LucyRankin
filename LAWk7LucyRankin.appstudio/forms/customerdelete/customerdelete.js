@@ -39,8 +39,8 @@ btnDelete.onclick = function() {
       if (req.responseText == 500) 
         lblMessage2.textContent = `You have successfully deleted the customer ${customerNameDelete}`
     else
-      lblMessage.textContent = `There was a problem deleting ${customerNameDelete} from the database.`
+      lblMessage2.textContent = `There was a problem deleting ${customerNameDelete} from the database.`
     else
-      lblDelete.textContent = `Error: ${req.status}`
+      lblMessage2.textContent = `Error: ${req.status}`
   }
 }

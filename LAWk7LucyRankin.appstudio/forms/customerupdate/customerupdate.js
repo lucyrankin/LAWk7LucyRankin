@@ -24,34 +24,30 @@ customerdelete.onshow = function() {
   } else
     lblMessage2.value = "Error code: " + req.status
 }
+let newName = inptUpdate.value
+let oldName = txtUpdate.value
 
-    let newName = inptUpdate.value
-    let oldName = txtUpdate.value
+let found = false
+for (i = 0; i <= allCustomers.length - 1; i++) {
+  if (oldName == allCustomers[i]) {
+    found = true
+    break
+  }
+}
+if (found == false)
+  NSB.MsgBox("That customer name is not in the database.")
+else if (found == true) {
+  query = "UPDATE customer SET name =" + '"' + newName + '"' + " WHERE name = " + '"' + oldName + '"'
 
-    let found = false
-    for (i = 0; i <= allCustomers.length - 1; i++) {
-      if (oldName == allCustomers[i]) {
-        found = true
-        break
-      }
-    }
-    if (found == false)
-      NSB.MsgBox("That customer name is not in the database.")
-    else if (found == true) {
-      query = "UPDATE customer SET name =" + '"' + newName + '"' + " WHERE name = " + '"' + oldName + '"'
-      
-      req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + netID + "&query=" + query)
-      if (req.status == 200) { 
-        if (req.responseText == 500) { 
-          NSB.MsgBox(`You have successfully changed the customer name!`)
-          inptUpdate.value = ""
-          txtUpdate.value = ""
-        } else
-          NSB.MsgBox(`There was a problem changing the customer name.`)
-      } else
+  req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + netID + "&query=" + query)
+  if (req.status == 200) {
+    if (req.responseText == 500) {
+      NSB.MsgBox(`You have successfully changed the customer name!`)
+      inptUpdate.value = ""
+      txtUpdate.value = ""
+    } else
+      NSB.MsgBox(`There was a problem changing the customer name.`)
+  } else
 
-        NSB.MsgBox(`Error: ${req.status}`);
-    } 
-    btnNxt4.onclick = function() {
-      ChangeForm(CustomerSelect)
-    }
+    NSB.MsgBox(`Error: ${req.status}`);
+}
